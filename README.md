@@ -45,10 +45,12 @@ By using the Years column, we can put the Movies into three categories.
 
 After determing a category, the data is split between start and end dates. For a Single Series/Movie the release year is set to equal the end year.
 
-![Alt text](AiringYear.png "Optional title")
+![AltText](CinemaImages/AiringYear.png)
 
 #### CinemaRatings
 The rows are grouped by Movies/Year and the Min, Max, and Avg rating are added created. Those without a rating use N/A instead. 
+
+![AltText](CinemaImages/Ratings.png)
 
 #### CinemaActors and CinemaDirectors are different tables but created using the same process.
 The data in the Stars column uses a " Star(s): Name, Name, Name | Director(s): Name, Name" format.
@@ -65,14 +67,26 @@ a name that already appeared in the string. A comma was then added between each 
 
 The returning column is a clean list of Actors for each movie. This same process is done for Directors. 
 
-#### CinemaVote
+![AltText](CinemaImages/Actors.png)
+![AltText](CinemaImages/Directorss.png)
+
+
+#### CinemaVotes
 This table gets the sum of votes afer casting the column to an int.
+
+![AltText](CinemaImages/Votes.png)
 
 #### CinemaGross
 As the GROSS column is not a numeric column. A seperate column was created by converting the column to decimal and finding the sum of the group.
 This is the TotalNumericGross. The TotalGross column adds a $.
 
+![AltText](CinemaImages/Grosss.png)
+
 #### CinemaGenre 
 This table follows a similar process to CinemaActors and CinemaDirectors. A temptable is created the same way except this time on Genre column.
 Then uses similar regex expressions to get the true unique Genres. 
 
+![AltText](CinemaImages/Genres.png)
+
+
+### EACH OF THESE CAN BE DOWNLOADED FROM CinemaTables.zip
