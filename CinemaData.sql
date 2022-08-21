@@ -55,7 +55,7 @@ WHERE AiringStatus like 'Single Series/Movie';
 UPDATE tempYear2
 SET YearReleased = TRIM(' ' FROM YearReleased) ;
 
-select * from tempYear2;
+
 
 
 # Create New Table. Groups Duplicate rows together
@@ -99,10 +99,10 @@ from (
             group by MOVIES, Year
             order by MOVIES) as myalias );
 
-select * from CinemaRatings;
+
 
 #### Actors and Directors
-
+# Temp table splits Actors and Directors
 create temporary table tempStar1 as (
 select Movies, Year, Stars, 
 substring_index(Stars,'|', 1) as Director,
@@ -110,8 +110,7 @@ substring_index(Stars, '|', -1) as Actors
 from CinemaTable
 order by Movies); 
 
-select * from tempStar1;
-
+# REMOVE NON NAMES OUT OF COLUMN
 UPDATE tempStar1
 SET Director = '' 
 WHERE Director like '%Star:%' ;
@@ -150,7 +149,7 @@ SET Actors = Replace(Actors, '  ', '');
 
 SET session group_concat_max_len=15000;
 
-
+# TEMP ACTORS
 create temporary table tempStar2(
 SELECT Movies, Year, Actors, 
 GROUP_CONCAT(Distinct Actors SEPARATOR ',') as GA FROM tempStar1 
@@ -175,9 +174,7 @@ from ( select *,REGEXP_REPLACE(GA, '\\s', '') as GA2 #remove all space
 from tempStar2 ) 
 as myalias ) as myalias2) as myalias3) as myalias4) as myalias5);
 
-
-
-
+# TEMP DIRECTORS
 create temporary table tempStar3(
 SELECT Movies, Year, Director, 
 GROUP_CONCAT(Distinct Director SEPARATOR ',') as GD FROM tempStar1 GROUP BY Movies, Year);
@@ -208,7 +205,7 @@ select Movies, Year, sum(cast(replace(Votes, ',' , '') as unsigned)) as TotalVot
 from CinemaTable
 group by Movies, Year
 order by Movies);
-#select * from CinemaVotes;
+
 
 #drop Table CinemaGross;
 create Table CinemaGross (
@@ -223,13 +220,12 @@ from CinemaTable
 	group by Movies, Year ) as myalias2
 group by Movies, Year
 order by Movies);
-#select * from CinemaGross;
+
 
 
 create temporary table tempGenre (select Movies, Year, 
 GROUP_CONCAT(Distinct Genre SEPARATOR ',') as GG from CinemaTable 
 GROUP BY Movies, Year);
-#select * from tempGenre;
 
 #drop table CinemaGenre;
 create table CinemaGenre (
@@ -248,7 +244,7 @@ from tempGenre )
 as myalias ) as myalias2) as myalias3) as myalias4);
 
 ## ALL NEW TABLES ##
-
+/*
 select * from CinemaAiringYears;
 select * from CinemaActors;
 select * from CinemaDirectors;
@@ -256,6 +252,8 @@ select * from CinemaRatings;
 select * from CinemaVotes;
 select * from CinemaGross;
 select * from CinemaGenre;
+*/
+
 
 # Concluded Series that ran the most years
 create view LongestConcludedSeries  as 
