@@ -98,8 +98,10 @@ Then uses similar regex expressions to get the true unique Genres.
 ## Views Created
 After creating the tables, I created views to extract certain information. Each of these views can be found in the CinemaViews.zip
 
-* LongestConcludedSeries: Concluded Series that ran the most years ![AltText](CinemaImages/LongestRunning.png)
-* HG_After_2012: Movies/TV Shows with the highest GROSS released after 2012  ![AltText](CinemaImages/HG.png)           
+* LongestConcludedSeries: Concluded Series that ran the most years 
+![AltText](CinemaImages/LongestRunning.png)
+* HG_After_2012: Movies/TV Shows with the highest GROSS released after 2012  
+![AltText](CinemaImages/HG.png)           
 * RomComs: On Going RomComs with the Highest Average Rating  ![AltText](CinemaImages/RomComs.png)
 * Actors_Directors: Shows the movies when there are at least 4 more actors than directors so long as the number of directors is not 0. ![AltText](CinemaImages/Actors_Directors.png)    
 * AD: Unions the Actors and Directors, creates NotablePeople column  ![AltText](CinemaImages/AD.png)
