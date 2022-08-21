@@ -11,6 +11,7 @@ The csv downloaded from Kaggle was encountering many issues when trying to impor
 3. Open XLSX in Excel and save as CSV. 
 
 After this, the CSV had no issues. 
+CinemaData.zip contains both the XLSX and new CSV.
 
 ## Built With
 MySQL Workbench 8.0 CE
