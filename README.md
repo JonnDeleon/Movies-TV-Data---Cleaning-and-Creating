@@ -92,3 +92,21 @@ Then uses similar regex expressions to get the true unique Genres.
 
 
 ### EACH OF THESE CAN BE DOWNLOADED FROM CinemaTables.zip
+
+
+
+## Views Created
+After creating the tables, I created views to extract certain information. Each of these views can be found in the CinemaViews.zip
+
+* LongestConcludedSeries: Concluded Series that ran the most years
+* HG_After_2012: Movies/TV Shows with the highest GROSS released after 2012             
+* RomComs: On Going RomComs with the Highest Average Rating
+* Actors_Directors: Shows the movies when there are at least 4 more actors than directors so long as the number of directors is not 0.     
+* AD: Unions the Actors and Directors, creates NotablePeople column
+* QT_ZS_Votes: Quentin Taratino and Zack Snyder films in order of TotalVotes
+
+
+
+
+
+
