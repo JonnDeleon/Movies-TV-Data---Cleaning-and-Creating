@@ -82,13 +82,13 @@ This table gets the sum of votes afer casting the column to an int.
 As the GROSS column is not a numeric column. A seperate column was created by converting the column to decimal and finding the sum of the group.
 This is the TotalNumericGross. The TotalGross column adds a $.
 
-![AltText](CinemaImages/Grosss.png)
+![AltText](CinemaImages/Gross.png)
 
 #### CinemaGenre 
 This table follows a similar process to CinemaActors and CinemaDirectors. A temptable is created the same way except this time on Genre column.
 Then uses similar regex expressions to get the true unique Genres. 
 
-![AltText](CinemaImages/Genres.png)
+![AltText](CinemaImages/Genre.png)
 
 
 ### EACH OF THESE CAN BE DOWNLOADED FROM CinemaTables.zip
