@@ -68,7 +68,9 @@ a name that already appeared in the string. A comma was then added between each 
 The returning column is a clean list of Actors for each movie. This same process is done for Directors. 
 
 ![AltText](CinemaImages/Actors.png)
-![AltText](CinemaImages/Directorss.png)
+
+
+![AltText](CinemaImages/Directors.png)
 
 
 #### CinemaVotes
