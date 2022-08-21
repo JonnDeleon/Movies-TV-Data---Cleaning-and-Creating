@@ -45,6 +45,7 @@ By using the Years column, we can put the Movies into three categories.
 
 After determing a category, the data is split between start and end dates. For a Single Series/Movie the release year is set to equal the end year.
 
+![Alt text](AiringYear.png "Optional title")
 
 #### CinemaRatings
 The rows are grouped by Movies/Year and the Min, Max, and Avg rating are added created. Those without a rating use N/A instead. 
