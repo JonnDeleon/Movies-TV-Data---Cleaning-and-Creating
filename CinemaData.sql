@@ -314,15 +314,15 @@ order by NumberOfActors desc , NumberOfDirectors desc;
 
 # Unions the Actors and Directors, creates NotablePeople column
 create view AD as
-select Movies, Actors as NotablePeople from CinemaActors
+select Movies as Title, Actors as NotablePeople from CinemaActors
 UNION
-select Movies, Directors as NotablePeople from CinemaDirectors
+select Movies as Title, Directors as NotablePeople from CinemaDirectors
 order by Movies;
 
 
 # Quentin Taratino and Zack Snyder films in order of TotalVotes
 create view QT_ZS_Votes as 
-select CinemaVotes.Movies, CinemaVotes.TotalVotes,
+select CinemaVotes.Movies as Title, CinemaVotes.TotalVotes,
 		CinemaDirectors.Directors
 from CinemaVotes 
 left join CinemaDirectors on CinemaVotes.Movies = CinemaDirectors.Movies
